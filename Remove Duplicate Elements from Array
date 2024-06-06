@@ -1,0 +1,17 @@
+function removeDuplicates(arr) {
+    let arr1 = []
+    for(let i=0; i < arr.length; i++){
+        let Duplicate = false;
+        for(let j=0; j<arr1.length; j++){
+            if(arr[i] === arr1[j]){
+                Duplicate = true;
+                break
+        }
+    }
+        if(!Duplicate){
+            arr1.push(arr[i])
+        }
+    }
+    return arr1
+}
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Output: [1, 2, 3, 4, 5]
