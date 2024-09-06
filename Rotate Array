@@ -13,5 +13,5 @@ function rotateArray(arr, k) {
 
     return result;
 }
-console.log(rotateArray([1, 2, 3, 4, 5], 3)); 
+console.log(rotateArray([1, 2, 3, 4, 5], 2)); 
 // Output: [4, 5, 1, 2, 3]
