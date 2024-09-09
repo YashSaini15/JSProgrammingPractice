@@ -1,0 +1,16 @@
+Q - How do you find the missing number in a given integer array of 1 to 100?
+
+const array = Array.from({ length: 100 }, (_, i) => i + 1);
+
+const arrayWithMissingNumber = array.filter(num => num !== 45);
+
+function findMissingNumber(arr) {
+  const n = 100;
+  const expectedSum = (n * (n + 1)) / 2;
+  const actualSum = arr.reduce((acc, num) => acc + num, 0);
+  return expectedSum - actualSum;
+}
+
+console.log(findMissingNumber(arrayWithMissingNumber)); 
+
+// Output: 45
