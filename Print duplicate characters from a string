@@ -1,0 +1,25 @@
+// How do you print duplicate characters from a string? 
+
+function duplicateInString(str) {
+    let charCount = {};
+    let duplicates = [];
+    
+    for (let char of str){
+        if (char !== " "){
+            charCount[char] = (charCount[char] || 0) + 1
+        }
+    }
+    
+    for (let char in charCount){
+        if(charCount[char]>1){
+            duplicates.push(char)
+        }
+    }
+    
+    return duplicates
+}
+
+let str = "weber is talking a lot";
+console.log(duplicateInString(str)); 
+
+// Output: ['e', 'i', 't', 'a', 'l']
