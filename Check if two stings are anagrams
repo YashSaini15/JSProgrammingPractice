@@ -1,0 +1,38 @@
+// How do you check if two strings are anagrams of each other? 
+
+function areAnagrams(str1, str2) {
+    // Remove spaces and convert to lowercase for case-insensitive comparison
+    str1 = str1.replace(/\s+/g, '').toLowerCase();
+    str2 = str2.replace(/\s+/g, '').toLowerCase();
+
+    // If lengths are different, they can't be anagrams
+    if (str1.length !== str2.length) {
+        return false;
+    }
+
+    // Create a frequency counter for str1
+    let charCount = {};
+
+    for (let char of str1) {
+        charCount[char] = (charCount[char] || 0) + 1;
+    }
+
+    // Compare frequency with str2
+    for (let char of str2) {
+        if (!charCount[char]) {
+            return false;
+        }
+        charCount[char] -= 1;
+    }
+
+    return true;
+}
+
+let str1 = "listen";
+let str2 = "silent";
+console.log(areAnagrams(str1, str2));  // Output: true
+
+str1 = "hello";
+str2 = "bello";
+console.log(areAnagrams(str1, str2));  // Output: false
+
