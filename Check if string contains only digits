@@ -1,0 +1,18 @@
+// How do you check if a string contains only digits? 
+
+function checkDigits(str){
+    for(let i=0; i < str.length; i++){
+        if(isNaN(str[i])){
+            return false 
+        }
+    }
+    return true
+}
+
+const str = "1234"
+console.log(checkDigits(str))
+const str2 = "ab12"
+console.log(checkDigits(str2))
+
+Output: true
+        false
