@@ -1,0 +1,32 @@
+// How do you find all the permutations of a string? 
+
+function permutationsOfString(str){
+    if (str.length === 1) {
+      return [str];  // Base case: if string has one character, return it as the only permutation
+    }
+
+    let permutations = [];
+
+    for (let i = 0; i < str.length; i++) {
+        let currentChar = str[i];
+
+        // Remaining characters after removing the current one
+        let remainingChars = str.slice(0, i) + str.slice(i + 1);
+
+        // Recursively find permutations of the remaining characters
+        let remainingPermutations = permutationsOfString(remainingChars);
+
+        // Combine current character with each of the remaining permutations
+        for (let perm of remainingPermutations) {
+            permutations.push(currentChar + perm);
+        }
+    }
+    
+    return permutations;
+}
+
+const str = "abc";
+console.log(permutationsOfString(str))
+
+Output: [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
+
