@@ -1,0 +1,12 @@
+function reverseString(str) {
+    if (str === "") {
+        return "";
+    }
+
+    return str[str.length - 1] + reverseString(str.slice(0, - 1));
+}
+
+let str = "aabeecc";
+console.log(reverseString(str)); 
+
+// Output: "cceebaa"
